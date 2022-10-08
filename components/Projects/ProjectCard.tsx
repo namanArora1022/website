@@ -27,11 +27,16 @@ const ProjectCard: React.FC<Props> = props => {
                 <p>{description}</p>
                 <div className="flex mt-3">
                     {previewLink && (
-                        <a className="mr-10" href={previewLink} target="_blank">
+                        <a
+                            className="mr-10"
+                            href={previewLink}
+                            target="_blank"
+                            rel="noreferrer"
+                        >
                             <Button>Preview</Button>
                         </a>
                     )}
-                    <a href={githubLink} target="_blank">
+                    <a href={githubLink} target="_blank" rel="noreferrer">
                         <Button>Github</Button>
                     </a>
                 </div>
