@@ -3,6 +3,7 @@ import Button from '../Button/Button';
 import { motion } from 'framer-motion';
 import { LandingData } from '../../interfaces';
 import { urlFor } from '../../lib';
+import Image from 'next/image';
 
 const variants = {
     hidden: { opacity: 0 },
@@ -34,7 +35,7 @@ const Landing: React.FC<Props> = props => {
     } = props;
 
     return (
-        <div className="flex flex-col lg:flex-row pt-20 lg:pt-0 lg:justify-between items-center h-screen">
+        <div className="flex flex-col lg:flex-row pt-20 lg:pt-0 lg:justify-between items-center lg:h-screen">
             <motion.div
                 className="w-full lg:w-1/2"
                 variants={variants}
@@ -68,14 +69,21 @@ const Landing: React.FC<Props> = props => {
                     </Button>
                 </motion.a>
             </motion.div>
-            <motion.img
-                src={urlFor(image)}
-                alt="landing-image"
-                className="object-cover w-full lg:w-1/2"
+
+            <motion.div
+                className="relative  lg:w-1/2"
                 whileInView={{ scale: [0, 1], opacity: [0, 1] }}
                 transition={{ duration: 0.7, damping: 2, type: 'spring' }}
                 viewport={{ once: true }}
-            />
+            >
+                <Image
+                    src={urlFor(image).url()}
+                    height={300}
+                    width={400}
+                    alt="landing-image"
+                    className="object-cover w-full"
+                />
+            </motion.div>
         </div>
     );
 };

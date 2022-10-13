@@ -3,6 +3,7 @@ import { Project } from '../../interfaces';
 import Button from '../Button/Button';
 import { motion } from 'framer-motion';
 import { urlFor } from '../../lib';
+import Image from 'next/image';
 
 interface Props extends Project {
     index: number;
@@ -46,8 +47,10 @@ const ProjectCard: React.FC<Props> = props => {
                     index % 2 === 0 ? 'lg:ml-10' : 'lg:mr-10'
                 }`}
             >
-                <img
-                    src={urlFor(image)}
+                <Image
+                    src={urlFor(image).url()}
+                    height={300}
+                    width={600}
                     alt={title}
                     className="shadow-lg rounded-lg"
                 />
