@@ -47,12 +47,12 @@ const Landing: React.FC<Props> = props => {
                     <br />
                     {bgText2}
                 </h2>
-                <motion.h4
+                <motion.h1
                     className="text-2xl md:text-3xl font-bold"
                     variants={item}
                 >
                     {smallText}
-                </motion.h4>
+                </motion.h1>
                 <motion.h1
                     className="text-5xl md:text-8xl font-bold mb-3 flex items-end"
                     variants={item}
