@@ -1,6 +1,6 @@
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
-import { Contact, Landing, Projects, SkillSet } from '../components';
+import { Contact, Footer, Landing, Projects, SkillSet } from '../components';
 import { ContactData, LandingData, Project, SkillSetData } from '../interfaces';
 import { client } from '../lib';
 
@@ -15,6 +15,7 @@ const Index = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
             <SkillSet {...skillSetData} />
             <Projects projects={projects} />
             <Contact {...contactData} />
+            <Footer />
         </div>
     );
 };
