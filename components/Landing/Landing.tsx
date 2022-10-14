@@ -63,7 +63,11 @@ const Landing: React.FC<Props> = props => {
                 <motion.p className="lg:w-2/3" variants={item}>
                     {description}
                 </motion.p>
-                <motion.a href="#mySkillSet" variants={item}>
+                <motion.a
+                    href="#mySkillSet"
+                    variants={item}
+                    aria-label="Read more about me"
+                >
                     <Button className="invisible lg:visible">
                         {buttonText}
                     </Button>
