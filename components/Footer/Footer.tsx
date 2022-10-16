@@ -1,7 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FooterData } from '../../interfaces';
 
-const Footer: React.FC = () => {
+interface Props extends FooterData {}
+
+const Footer: React.FC<Props> = props => {
+    const { name, twitterUsername, githubLink, twitterLink, instagramLink } =
+        props;
     return (
         <motion.footer
             className="text-gray-600 body-font"
@@ -11,10 +16,10 @@ const Footer: React.FC = () => {
         >
             <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
                 <span className="ml-3 text-xl text-black font-semibold border-b-2 border-teal-500 pb-1">
-                    Naman Arora
+                    {name}
                 </span>
                 <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
-                    © {new Date().getUTCFullYear()} Naman Arora{' '}
+                    © {new Date().getUTCFullYear()} {name}{' '}
                     <span className="hidden md:inline-block">—</span>
                     <a
                         href="https://twitter.com/namanarora1022"
@@ -22,13 +27,13 @@ const Footer: React.FC = () => {
                         rel="noopener noreferrer"
                         target="_blank"
                     >
-                        @namanarora1022
+                        {twitterUsername}
                     </a>
                 </p>
                 <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start items-center">
                     <a
                         className="ml-3 text-gray-500 cursor-pointer hover:text-teal-500 group"
-                        href="https://github.com/namanArora1022"
+                        href={githubLink}
                         rel="noopener noreferrer"
                         target="_blank"
                         aria-label="Github link"
@@ -47,7 +52,7 @@ const Footer: React.FC = () => {
                     </a>
                     <a
                         className="ml-3 text-gray-500 cursor-pointer hover:text-teal-500"
-                        href="https://twitter.com/namanarora1022"
+                        href={twitterLink}
                         rel="noopener noreferrer"
                         target="_blank"
                         aria-label="Twitter link"
@@ -65,7 +70,7 @@ const Footer: React.FC = () => {
                     </a>
                     <a
                         className="ml-3 text-gray-500 cursor-pointer hover:text-teal-500"
-                        href="https://www.instagram.com/naman_22a"
+                        href={instagramLink}
                         rel="noopener noreferrer"
                         target="_blank"
                         aria-label="Instagram link"

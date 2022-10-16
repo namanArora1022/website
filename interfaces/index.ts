@@ -31,3 +31,11 @@ export interface ContactData {
     description2: string;
     email: string;
 }
+
+export interface FooterData {
+    name: string;
+    twitterUsername: string;
+    githubLink: string;
+    instagramLink: string;
+    twitterLink: string;
+}
