@@ -14,10 +14,11 @@ const Footer: React.FC = () => {
                     Naman Arora
                 </span>
                 <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
-                    © {new Date().getUTCFullYear()} Naman Arora —
+                    © {new Date().getUTCFullYear()} Naman Arora{' '}
+                    <span className="hidden md:inline-block">—</span>
                     <a
                         href="https://twitter.com/namanarora1022"
-                        className="text-gray-600 ml-1 hover:text-teal-500 font-semibold"
+                        className="text-gray-600 ml-1 hover:text-teal-500 font-semibold hidden md:inline-block"
                         rel="noopener noreferrer"
                         target="_blank"
                     >
