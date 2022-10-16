@@ -16,6 +16,11 @@ export interface SkillSetData {
     description: string;
 }
 
+export interface Skill {
+    type: string;
+    level: number;
+}
+
 export interface Project {
     title: string;
     description: string;
