@@ -6,13 +6,20 @@ import {
     FooterData,
     LandingData,
     Project,
+    Skill,
     SkillSetData
 } from '../interfaces';
 import { client } from '../lib';
 
 const Index = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
-    const { landingData, skillSetData, projects, contactData, footerData } =
-        props;
+    const {
+        landingData,
+        skillSetData,
+        skills,
+        projects,
+        contactData,
+        footerData
+    } = props;
 
     return (
         <div className="px-10 lg:px-44">
@@ -20,7 +27,7 @@ const Index = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 <title>Naman Arora</title>
             </Head>
             <Landing {...landingData} />
-            <SkillSet {...skillSetData} />
+            <SkillSet {...skillSetData} skills={skills} />
             <Projects projects={projects} />
             <Contact {...contactData} />
             <Footer {...footerData} />
@@ -31,6 +38,7 @@ const Index = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
 interface DataProps {
     landingData: LandingData;
     skillSetData: SkillSetData;
+    skills: Skill[];
     projects: Project[];
     contactData: ContactData;
     footerData: FooterData;
@@ -45,6 +53,10 @@ export const getStaticProps: GetStaticProps<DataProps> = async () => {
         await client.fetch("*[_type == 'skillSet']")
     )[0] as SkillSetData;
 
+    const skills: Skill[] = await client.fetch(
+        "*[_type == 'skills'] | order(_createdAt)"
+    );
+
     const projects: Project[] = await client.fetch("*[_type == 'projects']");
 
     const contactData = (
@@ -56,7 +68,14 @@ export const getStaticProps: GetStaticProps<DataProps> = async () => {
     )[0] as FooterData;
 
     return {
-        props: { landingData, skillSetData, projects, contactData, footerData }
+        props: {
+            landingData,
+            skillSetData,
+            skills,
+            projects,
+            contactData,
+            footerData
+        }
     };
 };
 

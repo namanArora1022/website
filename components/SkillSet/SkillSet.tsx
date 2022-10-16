@@ -1,46 +1,72 @@
 import React from 'react';
 import Button from '../Button/Button';
 import { motion } from 'framer-motion';
-import { SkillSetData } from '../../interfaces';
+import { Skill, SkillSetData } from '../../interfaces';
+import Skillbar from 'react-skillbars';
 
-interface Props extends SkillSetData {}
+const colors = {
+    bar: '#14b8a6', // teal 500
+    title: {
+        text: '#fff',
+        background: '#0f766e' // teal 700
+    }
+};
+
+interface Props extends SkillSetData {
+    skills: Skill[];
+}
 
 const SkillSet: React.FC<Props> = props => {
-    const { smallText, largeText1, largeText2, buttonText, description } =
-        props;
+    const {
+        smallText,
+        largeText1,
+        largeText2,
+        buttonText,
+        description,
+        skills
+    } = props;
+    console.log(skills);
 
     return (
-        <div
-            className="mb-20 flex flex-col lg:flex-row justify-between items-center mt-20 lg:mt-0"
-            id="mySkillSet"
-        >
-            <motion.div
-                className="lg:w-1/2"
-                whileInView={{ y: [100, 0], opacity: [0, 1] }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
+        <>
+            <div
+                className="mb-20 flex flex-col lg:flex-row justify-between items-center mt-20 lg:mt-0"
+                id="mySkillSet"
             >
-                <h2 className="uppercase text-teal-500 font-bold mb-6 tracking-wider">
-                    {smallText}
-                </h2>
-                <h3 className="flex lg:flex-col font-bold capitalize text-3xl">
-                    <span>{largeText1}</span>
-                    <span>{largeText2}</span>
-                </h3>
-                <a href="#projects">
-                    <Button>{buttonText}</Button>
-                </a>
-            </motion.div>
-            <motion.div
-                className="mt-7 lg:mt-0 lg:w-1/2"
-                whileInView={{ y: [100, 0], opacity: [0, 1] }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-            >
-                <p>{description}</p>
-                {/* // TODO: add tech icons/logos */}
-            </motion.div>
-        </div>
+                <motion.div
+                    className="lg:w-1/2"
+                    whileInView={{ y: [100, 0], opacity: [0, 1] }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true }}
+                >
+                    <h2 className="uppercase text-teal-500 font-bold mb-6 tracking-wider">
+                        {smallText}
+                    </h2>
+                    <h3 className="flex lg:flex-col font-bold capitalize text-3xl">
+                        <span>{largeText1}</span>
+                        <span>{largeText2}</span>
+                    </h3>
+                    <a href="#projects">
+                        <Button>{buttonText}</Button>
+                    </a>
+                </motion.div>
+                <motion.div
+                    className="mt-7 lg:mt-0 lg:w-1/2"
+                    whileInView={{ y: [100, 0], opacity: [0, 1] }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true }}
+                >
+                    <p>{description}</p>
+                </motion.div>
+            </div>
+            <div className="mb-20 capitalize">
+                <Skillbar
+                    skills={skills}
+                    colors={colors}
+                    animationDuration={3000}
+                />
+            </div>
+        </>
     );
 };
 
