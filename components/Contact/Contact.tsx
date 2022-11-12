@@ -13,6 +13,7 @@ const Contact: React.FC<Props> = props => {
             whileInView={{ y: [100, 0], opacity: [0, 1] }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
+            id="contact"
         >
             <h4 className="uppercase tracking-wider text-teal-500 font-bold text-sm">
                 {smallText}
