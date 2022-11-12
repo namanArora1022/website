@@ -25,7 +25,6 @@ const SkillSet: React.FC<Props> = props => {
         description,
         skills
     } = props;
-    console.log(skills);
 
     return (
         <>
