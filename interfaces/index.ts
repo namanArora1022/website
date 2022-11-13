@@ -86,9 +86,5 @@ export interface Blog extends BaseData {
     excerpt: string;
     image: ImageType;
     content: any;
-    categories: {
-        _key: string;
-        _ref: string;
-        _type: string;
-    }[];
+    categories: Category[];
 }

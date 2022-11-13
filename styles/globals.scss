@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    p {
+        @apply text-gray-700;
+    }
+
+    .content {
+        h1 {
+            @apply text-3xl mb-4 font-bold;
+        }
+
+        h2 {
+            @apply text-2xl mb-4 font-bold;
+        }
+
+        h3 {
+            @apply text-xl mb-4 font-bold;
+        }
+
+        h4 {
+            @apply text-lg mb-4 font-bold;
+        }
+
+        h5 {
+            @apply text-base mb-4 font-bold;
+        }
+
+        h6 {
+            @apply text-sm mb-4 font-bold;
+        }
+
+        a {
+            @apply border-b border-b-teal-500 text-teal-500;
+        }
+
+        ul {
+            list-style: disc;
+        }
+    }
+}
