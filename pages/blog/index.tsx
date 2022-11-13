@@ -17,7 +17,7 @@ const Blogs = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2">
                 {blogs.map(blog => (
-                    <BlogCard {...blog} />
+                    <BlogCard {...blog} key={blog._id} />
                 ))}
             </div>
         </div>

@@ -10,10 +10,7 @@ interface Props extends BlogCardData {}
 const BlogCard: React.FC<Props> = props => {
     const { _id, image, title, categories, excerpt, slug } = props;
     return (
-        <div
-            key={_id}
-            className="bg-gray-100 p-4 rounded-lg shadow hover:shadow-lg hover:scale-105 transition duration-200 my-10 md:m-10"
-        >
+        <div className="bg-gray-100 p-4 rounded-lg shadow hover:shadow-lg hover:scale-105 transition duration-200 my-10 md:m-10">
             <Image
                 src={urlFor(image).url()}
                 height={200}
