@@ -1,3 +1,19 @@
+export interface BaseData {
+    _id: string;
+    _type: string;
+    _rev: string;
+    _createdAt: string;
+    _updatedAt: string;
+}
+
+export interface ImageType {
+    _type: string;
+    asset: {
+        _ref: string;
+        _type: string;
+    };
+}
+
 export interface LandingData {
     bgText1: string;
     bgText2: string;
@@ -5,7 +21,7 @@ export interface LandingData {
     name: string;
     description: string;
     buttonText: string;
-    image: string;
+    image: ImageType;
 }
 
 export interface SkillSetData {
@@ -26,7 +42,7 @@ export interface Project {
     description: string;
     previewLink?: string;
     githubLink: string;
-    image: string;
+    image: ImageType;
 }
 
 export interface ContactData {
@@ -43,4 +59,36 @@ export interface FooterData {
     githubLink: string;
     instagramLink: string;
     twitterLink: string;
+}
+
+export interface Category extends BaseData {
+    name: string;
+}
+
+export interface BlogCardData {
+    _id: string;
+    title: string;
+    image: ImageType;
+    excerpt: string;
+    slug: {
+        _type: string;
+        current: string;
+    };
+    categories: Category[];
+}
+
+export interface Blog extends BaseData {
+    title: string;
+    slug: {
+        _type: string;
+        current: string;
+    };
+    excerpt: string;
+    image: ImageType;
+    content: any;
+    categories: {
+        _key: string;
+        _ref: string;
+        _type: string;
+    }[];
 }
