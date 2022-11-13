@@ -3,14 +3,19 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { BlogCardData } from '../../interfaces';
 import { urlFor } from '../../lib';
+import { motion } from 'framer-motion';
 
 interface Props extends BlogCardData {}
 
 const BlogCard: React.FC<Props> = props => {
-    const { _id, image, title, categories, excerpt, slug } = props;
+    const { image, title, categories, excerpt, slug } = props;
     return (
         <Link href={`/blog/${slug.current}`} passHref>
-            <div className="bg-gray-100 p-4 rounded-lg shadow hover:shadow-lg hover:scale-105 transition duration-200 my-10 md:m-10 cursor-pointer">
+            <motion.div
+                className="bg-gray-100 p-4 rounded-lg shadow hover:shadow-lg my-10 md:m-10 cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+            >
                 <Image
                     src={urlFor(image).url()}
                     height={200}
@@ -30,7 +35,7 @@ const BlogCard: React.FC<Props> = props => {
                         </span>
                     ))}
                 </div>
-            </div>
+            </motion.div>
         </Link>
     );
 };

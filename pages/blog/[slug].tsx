@@ -6,6 +6,8 @@ import { client, urlFor } from '../../lib';
 import dayjs from 'dayjs';
 import { PortableText } from '@portabletext/react';
 import { motion } from 'framer-motion';
+import { IoCaretBack } from 'react-icons/io5';
+import Link from 'next/link';
 
 const BlogDetails = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const { blog } = props;
@@ -23,6 +25,18 @@ const BlogDetails = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 transition={{ duration: 0.5, delay: 0.6 }}
                 viewport={{ once: true }}
             >
+                <Link href="/blog" passHref>
+                    <a>
+                        <motion.button
+                            className="flex items-center mb-5 border-b-[3px] pb-2 border-b-teal-500 hover:bg-teal-200 transition duration-200"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            <IoCaretBack />
+                            <span>Back</span>
+                        </motion.button>
+                    </a>
+                </Link>
                 <Image
                     src={urlFor(image).url()}
                     height={500}
