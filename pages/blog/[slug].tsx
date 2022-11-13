@@ -68,7 +68,7 @@ const BlogDetails = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                     transition={{ duration: 0.5, delay: 0.6 }}
                     viewport={{ once: true }}
                 >
-                    {categories.map(category => (
+                    {categories?.map(category => (
                         <span
                             key={category._id}
                             className="px-4 py-1 bg-teal-500 text-white rounded-full mr-4"
