@@ -90,6 +90,7 @@ const BlogDetails = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                 image: ({ value }) => (
                                     <Image
                                         src={urlFor(value).url()}
+                                        alt=""
                                         height={400}
                                         width={800}
                                         className="object-cover rounded"
