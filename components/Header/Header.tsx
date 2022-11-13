@@ -20,18 +20,6 @@ const Header: React.FC = () => {
                         Blogs
                     </a>
                 </Link>
-                <a
-                    className="hover:border-b-2 hover:border-b-teal-500"
-                    href="#projects"
-                >
-                    Projects
-                </a>
-                <a
-                    className="hover:border-b-2 hover:border-b-teal-500"
-                    href="#contact"
-                >
-                    Contact
-                </a>
             </nav>
         </header>
     );
