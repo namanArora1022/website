@@ -8,7 +8,6 @@ import { client, urlFor } from '../../lib';
 
 const Blogs = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const { blogs } = props;
-    console.log(blogs);
 
     return (
         <div className="px-10 lg:px-44 my-20">
@@ -18,11 +17,11 @@ const Blogs = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
             <h2 className="text-3xl font-semibold mb-10 border-b-4 border-b-teal-500 inline-block pb-2">
                 All Blogs
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 md:grid-cols-2">
                 {blogs.map(blog => (
                     <div
                         key={blog._id}
-                        className="bg-gray-100 p-4 rounded-lg shadow hover:shadow-lg hover:scale-105 transition duration-200"
+                        className="bg-gray-100 p-4 rounded-lg shadow hover:shadow-lg hover:scale-105 transition duration-200 my-10 md:m-10"
                     >
                         <Image
                             src={urlFor(blog.image).url()}
