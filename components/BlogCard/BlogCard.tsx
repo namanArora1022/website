@@ -26,7 +26,7 @@ const BlogCard: React.FC<Props> = props => {
                 <h3 className="text-xl font-semibold my-4">{title}</h3>
                 <p>{excerpt}</p>
                 <div className="flex flex-wrap mt-5 items-center">
-                    {categories.map(category => (
+                    {categories?.map(category => (
                         <span
                             key={category._id}
                             className="px-4 py-1 bg-teal-500 text-white rounded-full mr-4"
