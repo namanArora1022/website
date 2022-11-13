@@ -10,13 +10,13 @@ import { IoCaretBack } from 'react-icons/io5';
 import Link from 'next/link';
 
 const BlogDetails = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
-    const { blog } = props;
-    const { title, image, categories, _createdAt, content } = blog;
+    const { title, image, categories, _createdAt, content } = props.blog;
+    const pageTitle = `${title} | Naman Arora`;
 
     return (
         <>
             <Head>
-                <title>{blog.title} | Naman Arora</title>
+                <title>{pageTitle}</title>
             </Head>
 
             <motion.div
@@ -42,7 +42,7 @@ const BlogDetails = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                     height={500}
                     width={1000}
                     className="object-cover rounded-2xl"
-                    alt={blog.title}
+                    alt={title}
                 />
                 <motion.h1
                     className="text-4xl font-semibold mt-10 mb-5 pb-2 border-b-teal-500 border-b-4 inline-block"
