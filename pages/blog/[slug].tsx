@@ -41,7 +41,7 @@ const BlogDetails = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                     src={urlFor(image).url()}
                     height={500}
                     width={1000}
-                    className="object-cover"
+                    className="object-cover rounded-2xl"
                     alt={blog.title}
                 />
                 <motion.h1
@@ -92,7 +92,7 @@ const BlogDetails = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                         src={urlFor(value).url()}
                                         height={400}
                                         width={800}
-                                        className="object-cover"
+                                        className="object-cover rounded"
                                     />
                                 )
                             }
