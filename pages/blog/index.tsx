@@ -27,9 +27,11 @@ const Blogs = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 transition={{ duration: 0.5, delay: 0.6 }}
                 viewport={{ once: true }}
             >
-                {blogs.map(blog => (
-                    <BlogCard {...blog} key={blog._id} />
-                ))}
+                {blogs.length === 0 ? (
+                    <h4 className="font-semibold">No Blogs yet 😢</h4>
+                ) : (
+                    blogs.map(blog => <BlogCard {...blog} key={blog._id} />)
+                )}
             </motion.div>
         </div>
     );
