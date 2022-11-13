@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { BlogCard } from '../../components';
 import { BlogCardData } from '../../interfaces';
 import { client } from '../../lib';
+import { motion } from 'framer-motion';
 
 const Blogs = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const { blogs } = props;
@@ -12,14 +13,24 @@ const Blogs = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
             <Head>
                 <title>Blogs | Naman Arora</title>
             </Head>
-            <h2 className="text-3xl font-semibold mb-10 border-b-4 border-b-teal-500 inline-block pb-2">
+            <motion.h2
+                className="text-3xl font-semibold mb-10 border-b-4 border-b-teal-500 inline-block pb-2"
+                whileInView={{ x: [-100, 0], opacity: [0, 1] }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+            >
                 All Blogs
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2">
+            </motion.h2>
+            <motion.div
+                className="grid grid-cols-1 md:grid-cols-2"
+                whileInView={{ y: [100, 0], opacity: [0, 1] }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                viewport={{ once: true }}
+            >
                 {blogs.map(blog => (
                     <BlogCard {...blog} key={blog._id} />
                 ))}
-            </div>
+            </motion.div>
         </div>
     );
 };

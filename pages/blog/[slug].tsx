@@ -5,6 +5,7 @@ import { Blog } from '../../interfaces';
 import { client, urlFor } from '../../lib';
 import dayjs from 'dayjs';
 import { PortableText } from '@portabletext/react';
+import { motion } from 'framer-motion';
 
 const BlogDetails = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const { blog } = props;
@@ -16,7 +17,12 @@ const BlogDetails = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 <title>{blog.title} | Naman Arora</title>
             </Head>
 
-            <div className="px-10 lg:px-44 my-20 flex flex-col justify-start items-start">
+            <motion.div
+                className="px-10 lg:px-44 my-20 flex flex-col justify-start items-start"
+                whileInView={{ y: [100, 0], opacity: [0, 1] }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                viewport={{ once: true }}
+            >
                 <Image
                     src={urlFor(image).url()}
                     height={500}
@@ -24,16 +30,30 @@ const BlogDetails = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                     className="object-cover"
                     alt={blog.title}
                 />
-                <h1 className="text-4xl font-semibold mt-10 mb-5 pb-2 border-b-teal-500 border-b-4 inline-block">
+                <motion.h1
+                    className="text-4xl font-semibold mt-10 mb-5 pb-2 border-b-teal-500 border-b-4 inline-block"
+                    whileInView={{ x: [-50, 0], opacity: [0, 1] }}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                    viewport={{ once: true }}
+                >
                     {title}
-                </h1>
-                <p>
+                </motion.h1>
+                <motion.p
+                    whileInView={{ x: [-50, 0], opacity: [0, 1] }}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                    viewport={{ once: true }}
+                >
                     Pushlished on{' '}
                     <span className="font-semibold">
                         {dayjs(_createdAt).format('DD MMM YYYY')}
                     </span>
-                </p>
-                <div className="flex flex-wrap mt-5 mb-3 items-center">
+                </motion.p>
+                <motion.div
+                    className="flex flex-wrap mt-5 mb-3 items-center"
+                    whileInView={{ x: [-50, 0], opacity: [0, 1] }}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                    viewport={{ once: true }}
+                >
                     {categories.map(category => (
                         <span
                             key={category._id}
@@ -42,8 +62,13 @@ const BlogDetails = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                             {category.name}
                         </span>
                     ))}
-                </div>
-                <div className="mt-5 content">
+                </motion.div>
+                <motion.div
+                    className="mt-5 content"
+                    whileInView={{ x: [-50, 0], opacity: [0, 1] }}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                    viewport={{ once: true }}
+                >
                     <PortableText
                         value={content}
                         components={{
@@ -59,8 +84,8 @@ const BlogDetails = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                             }
                         }}
                     />
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
         </>
     );
 };
