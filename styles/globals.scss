@@ -43,5 +43,9 @@
         ul {
             list-style: disc;
         }
+
+        code {
+            @apply whitespace-pre;
+        }
     }
 }
