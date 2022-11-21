@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { CgMenuRightAlt } from 'react-icons/cg';
-import { AiOutlineClose } from 'react-icons/ai';
+import { GrFormClose } from 'react-icons/gr';
 
 const Header: React.FC = () => {
     const router = useRouter();
@@ -47,11 +47,11 @@ const Header: React.FC = () => {
             </nav>
 
             <div
-                className="ml-auto inline-block md:hidden"
+                className="ml-auto inline-block md:hidden cursor-pointer"
                 onClick={() => setOpen(!open)}
             >
                 {open ? (
-                    <AiOutlineClose className="h-7 w-7" />
+                    <GrFormClose className="h-7 w-7" />
                 ) : (
                     <CgMenuRightAlt className="h-7 w-7" />
                 )}
