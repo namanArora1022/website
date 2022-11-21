@@ -41,8 +41,9 @@ const SkillSet: React.FC<Props> = props => {
                     <h2 className="uppercase text-teal-500 font-bold mb-6 tracking-wider">
                         {smallText}
                     </h2>
-                    <h3 className="flex lg:flex-col font-bold capitalize text-3xl">
+                    <h3 className="flex flex-row md:flex-col lg:flex-col font-bold capitalize text-3xl">
                         <span>{largeText1}</span>
+                        <span className="block mr-3">&</span>
                         <span>{largeText2}</span>
                     </h3>
                     <a href="#projects">
