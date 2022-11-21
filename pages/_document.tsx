@@ -12,23 +12,12 @@ export default function Document() {
                     name="keywords"
                     content="Naman Arora Web Developer Website Portfolio"
                 />
+                <link rel="icon" type="image/svg" href="/logo.svg" />
 
                 {/* Google search console */}
                 <meta
                     name="google-site-verification"
                     content="f1xJCJmDE2FV3kTuVZ5ETtGLOspPpCivXtIRv5HK30Y"
-                />
-
-                {/* Fonts */}
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link
-                    rel="preconnect"
-                    href="https://fonts.gstatic.com"
-                    crossOrigin=""
-                />
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap"
-                    rel="stylesheet"
                 />
             </Head>
             <body>

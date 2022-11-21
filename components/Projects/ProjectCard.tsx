@@ -38,7 +38,7 @@ const ProjectCard: React.FC<Props> = props => {
                         </a>
                     )}
                     <a href={githubLink} target="_blank" rel="noreferrer">
-                        <Button>Github</Button>
+                        <Button>View Code</Button>
                     </a>
                 </div>
             </div>

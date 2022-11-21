@@ -42,7 +42,7 @@ const Landing: React.FC<Props> = props => {
                 initial="hidden"
                 animate="show"
             >
-                <h2 className="absolute -z-20 text-gray-400 text-5xl md:text-8xl font-bold -mt-10 md:-mt-5 capitalize">
+                <h2 className="absolute -z-20 text-gray-300 text-5xl md:text-8xl font-bold mt-2 md:-mt-5 capitalize">
                     {bgText1}
                     <br />
                     {bgText2}
