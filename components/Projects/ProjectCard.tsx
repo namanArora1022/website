@@ -10,7 +10,8 @@ interface Props extends Project {
 }
 
 const ProjectCard: React.FC<Props> = props => {
-    const { title, description, githubLink, image, previewLink, index } = props;
+    const { title, description, githubLink, image, previewLink, index, tags } =
+        props;
 
     return (
         <motion.div
@@ -26,6 +27,17 @@ const ProjectCard: React.FC<Props> = props => {
                     {title}
                 </h3>
                 <p>{description}</p>
+                <div className="mt-4 flex flex-wrap">
+                    {tags &&
+                        tags.map((tag, index) => (
+                            <span
+                                className="mb-5 mr-4 py-2 px-4 bg-teal-500 text-white rounded-full cursor-pointer"
+                                key={`tag-${tag}-${index}`}
+                            >
+                                {tag}
+                            </span>
+                        ))}
+                </div>
                 <div className="flex mt-3">
                     {previewLink && (
                         <a
@@ -55,7 +67,6 @@ const ProjectCard: React.FC<Props> = props => {
                     className="shadow-lg rounded-lg"
                 />
             </div>
-            {/* // TODO: add tags */}
         </motion.div>
     );
 };

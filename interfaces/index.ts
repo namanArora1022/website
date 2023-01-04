@@ -42,6 +42,7 @@ export interface Project {
     description: string;
     previewLink?: string;
     githubLink: string;
+    tags: string[];
     image: ImageType;
 }
 
