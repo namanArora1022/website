@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { CgMenuRightAlt } from 'react-icons/cg';
 import { GrFormClose } from 'react-icons/gr';
+import Image from 'next/image';
+import logo from '../../public/logo.svg';
 
 const Header: React.FC = () => {
     const router = useRouter();
@@ -14,6 +16,7 @@ const Header: React.FC = () => {
             className="flex items-center px-10 md:px-20 fixed h-20 md:h-24 w-full top-0 z-10
             bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 border border-gray-200 rounded-xl shadow"
         >
+            <Image src={logo} alt="N" height="64px" width="64px" />
             <nav className="hidden md:inline-block ml-auto">
                 <div className="flex items-center gap-3">
                     <Link href="/" passHref>
