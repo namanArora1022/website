@@ -1,8 +1,8 @@
 import React from 'react';
-import Button from '../Button/Button';
+import { Button } from '@components';
 import { motion } from 'framer-motion';
-import { LandingData } from '../../interfaces';
-import { urlFor } from '../../lib';
+import { LandingData } from '@interfaces';
+import { urlFor } from '@lib';
 import Image from 'next/image';
 
 const variants = {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FooterData } from '../../interfaces';
+import { FooterData } from '@interfaces';
 
 interface Props extends FooterData {}
 

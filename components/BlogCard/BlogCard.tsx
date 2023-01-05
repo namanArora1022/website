@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { BlogCardData } from '../../interfaces';
-import { urlFor } from '../../lib';
+import { BlogCardData } from '@interfaces';
+import { urlFor } from '@lib';
 import { motion } from 'framer-motion';
 
 interface Props extends BlogCardData {}

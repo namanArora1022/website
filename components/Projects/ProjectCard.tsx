@@ -1,8 +1,8 @@
 import React from 'react';
-import { Project } from '../../interfaces';
-import Button from '../Button/Button';
+import { Project } from '@interfaces';
+import { Button } from '@components';
 import { motion } from 'framer-motion';
-import { urlFor } from '../../lib';
+import { urlFor } from '@lib';
 import Image from 'next/image';
 
 interface Props extends Project {

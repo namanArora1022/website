@@ -1,6 +1,6 @@
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
-import { Contact, Footer, Landing, Projects, SkillSet } from '../components';
+import { Contact, Footer, Landing, Projects, SkillSet } from '@components';
 import {
     ContactData,
     FooterData,
@@ -8,8 +8,8 @@ import {
     Project,
     Skill,
     SkillSetData
-} from '../interfaces';
-import { client } from '../lib';
+} from '@interfaces';
+import { client } from '@lib';
 
 const Index = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const {

@@ -1,7 +1,7 @@
 import React from 'react';
-import Button from '../Button/Button';
+import { Button } from '@components';
 import { motion } from 'framer-motion';
-import { Skill, SkillSetData } from '../../interfaces';
+import { Skill, SkillSetData } from '@interfaces';
 import Skillbar from 'react-skillbars';
 
 const colors = {

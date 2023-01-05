@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { CgMenuRightAlt } from 'react-icons/cg';
-import { IoIosClose } from 'react-icons/io';
 import Image from 'next/image';
 import logo from '../../public/logo.svg';
 import { useTheme } from 'next-themes';
-import { useLoaded } from '../../hooks';
+import { useLoaded } from '@hooks';
+
+// Icons
+import { CgMenuRightAlt } from 'react-icons/cg';
+import { IoIosClose } from 'react-icons/io';
 import { FaSun } from 'react-icons/fa';
 import { BsFillMoonStarsFill } from 'react-icons/bs';
 
@@ -21,7 +23,11 @@ const Header: React.FC = () => {
             className="flex items-center px-10 md:px-20 fixed h-20 md:h-24 w-full top-0 z-10
             bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 border border-gray-200 dark:border-Black rounded-xl shadow"
         >
-            <Image src={logo} alt="N" height="64px" width="64px" />
+            <Link href="/" passHref>
+                <a>
+                    <Image src={logo} alt="N" height="64px" width="64px" />
+                </a>
+            </Link>
             <nav className="hidden md:inline-block ml-auto">
                 <div className="flex items-center gap-3">
                     <Link href="/" passHref>

@@ -1,8 +1,8 @@
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
-import { BlogCard } from '../../components';
-import { BlogCardData } from '../../interfaces';
-import { client } from '../../lib';
+import { BlogCard } from '@components';
+import { BlogCardData } from '@interfaces';
+import { client } from '@lib';
 import { motion } from 'framer-motion';
 
 const Blogs = (props: InferGetStaticPropsType<typeof getStaticProps>) => {

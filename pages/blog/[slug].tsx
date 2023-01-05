@@ -1,8 +1,8 @@
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import { Blog } from '../../interfaces';
-import { client, urlFor } from '../../lib';
+import { Blog } from '@interfaces';
+import { client, urlFor } from '@lib';
 import dayjs from 'dayjs';
 import { PortableText } from '@portabletext/react';
 import { motion } from 'framer-motion';

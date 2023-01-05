@@ -1,7 +1,7 @@
 import React from 'react';
 import ProjectCard from './ProjectCard';
 import { motion } from 'framer-motion';
-import { Project } from '../../interfaces';
+import { Project } from '@interfaces';
 
 interface Props {
     projects: Project[];

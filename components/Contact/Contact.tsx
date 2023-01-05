@@ -1,7 +1,7 @@
 import React from 'react';
-import Button from '../Button/Button';
+import { Button } from '@components';
 import { motion } from 'framer-motion';
-import { ContactData } from '../../interfaces';
+import { ContactData } from '@interfaces';
 
 interface Props extends ContactData {}
 
