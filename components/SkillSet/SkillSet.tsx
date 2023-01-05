@@ -56,7 +56,7 @@ const SkillSet: React.FC<Props> = props => {
                     transition={{ duration: 0.5 }}
                     viewport={{ once: true }}
                 >
-                    <p>{description}</p>
+                    <p className="dark:text-white">{description}</p>
                 </motion.div>
             </div>
             <div className="mb-20 capitalize">
@@ -64,6 +64,7 @@ const SkillSet: React.FC<Props> = props => {
                     skills={skills}
                     colors={colors}
                     animationDuration={3000}
+                    animationDelay={0}
                 />
             </div>
         </>

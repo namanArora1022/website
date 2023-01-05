@@ -31,7 +31,7 @@ const ProjectCard: React.FC<Props> = props => {
                     {tags &&
                         tags.map((tag, index) => (
                             <span
-                                className="mb-5 mr-4 py-2 px-4 bg-teal-500 text-white rounded-full cursor-pointer"
+                                className="mb-3 md:mb-5 mr-2 md:mr-4 py-2 px-4 bg-teal-500 text-white rounded-full cursor-pointer text-sm md:text-base"
                                 key={`tag-${tag}-${index}`}
                             >
                                 {tag}

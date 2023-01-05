@@ -9,21 +9,21 @@ const Footer: React.FC<Props> = props => {
         props;
     return (
         <motion.footer
-            className="text-gray-600 body-font"
+            className="text-gray-600 dark:text-gray-300 body-font"
             whileInView={{ y: [100, 0], opacity: [0, 1] }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
         >
             <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-                <span className="ml-3 text-xl text-black font-semibold border-b-2 border-teal-500 pb-1">
+                <span className="ml-3 text-xl text-black dark:text-white font-semibold border-b-2 border-teal-500 pb-1">
                     {name}
                 </span>
-                <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+                <p className="text-sm text-gray-500 dark:text-white sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
                     © {new Date().getUTCFullYear()} {name}{' '}
                     <span className="hidden md:inline-block">—</span>
                     <a
                         href="https://twitter.com/namanarora1022"
-                        className="text-gray-600 ml-1 hover:text-teal-500 font-semibold hidden md:inline-block"
+                        className="ml-1 hover:text-teal-500 font-semibold hidden md:inline-block"
                         rel="noopener noreferrer"
                         target="_blank"
                     >
@@ -41,7 +41,7 @@ const Footer: React.FC<Props> = props => {
                         <svg
                             viewBox="0 0 24 24"
                             aria-hidden="true"
-                            className="h-7 w-7 fill-gray-500 group-hover:fill-teal-500"
+                            className="h-7 w-7 fill-gray-500 dark:fill-neutral-200 group-hover:fill-teal-500"
                         >
                             <path
                                 fillRule="evenodd"
@@ -51,7 +51,7 @@ const Footer: React.FC<Props> = props => {
                         </svg>
                     </a>
                     <a
-                        className="ml-3 text-gray-500 cursor-pointer hover:text-teal-500"
+                        className="ml-3 text-gray-500 cursor-pointer hover:text-teal-500 group"
                         href={twitterLink}
                         rel="noopener noreferrer"
                         target="_blank"
@@ -62,14 +62,14 @@ const Footer: React.FC<Props> = props => {
                             strokeLinecap="round"
                             strokeLinejoin="round"
                             strokeWidth="2"
-                            className="w-6 h-6"
+                            className="w-6 h-6 fill-gray-500 dark:fill-neutral-200 group-hover:fill-teal-500"
                             viewBox="0 0 24 24"
                         >
                             <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
                         </svg>
                     </a>
                     <a
-                        className="ml-3 text-gray-500 cursor-pointer hover:text-teal-500"
+                        className="ml-3 text-gray-500 cursor-pointer hover:text-teal-500 group"
                         href={instagramLink}
                         rel="noopener noreferrer"
                         target="_blank"
@@ -81,7 +81,7 @@ const Footer: React.FC<Props> = props => {
                             strokeLinecap="round"
                             strokeLinejoin="round"
                             strokeWidth="2"
-                            className="w-6 h-6"
+                            className="w-6 h-6 stroke-gray-500 dark:stroke-neutral-200 group-hover:stroke-teal-500"
                             viewBox="0 0 24 24"
                         >
                             <rect
