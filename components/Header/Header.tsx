@@ -2,19 +2,24 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { CgMenuRightAlt } from 'react-icons/cg';
-import { GrFormClose } from 'react-icons/gr';
+import { IoIosClose } from 'react-icons/io';
 import Image from 'next/image';
 import logo from '../../public/logo.svg';
+import { useTheme } from 'next-themes';
+import { useLoaded } from '../../hooks';
+import { FaSun } from 'react-icons/fa';
+import { BsFillMoonStarsFill } from 'react-icons/bs';
 
 const Header: React.FC = () => {
     const router = useRouter();
-
     const [open, setOpen] = useState(false);
+    const { theme, setTheme } = useTheme();
+    const loaded = useLoaded();
 
     return (
         <header
             className="flex items-center px-10 md:px-20 fixed h-20 md:h-24 w-full top-0 z-10
-            bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 border border-gray-200 rounded-xl shadow"
+            bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 border border-gray-200 dark:border-Black rounded-xl shadow"
         >
             <Image src={logo} alt="N" height="64px" width="64px" />
             <nav className="hidden md:inline-block ml-auto">
@@ -48,13 +53,23 @@ const Header: React.FC = () => {
                     )}
                 </div>
             </nav>
+            <div
+                className="ml-6 hidden md:inline-block cursor-pointer"
+                onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+            >
+                {loaded && theme === 'dark' ? (
+                    <FaSun className="h-7 w-7" />
+                ) : (
+                    <BsFillMoonStarsFill className="h-7 w-7" />
+                )}
+            </div>
 
             <div
                 className="ml-auto inline-block md:hidden cursor-pointer"
                 onClick={() => setOpen(!open)}
             >
                 {open ? (
-                    <GrFormClose className="h-7 w-7" />
+                    <IoIosClose className="h-7 w-7" />
                 ) : (
                     <CgMenuRightAlt className="h-7 w-7" />
                 )}
@@ -95,6 +110,18 @@ const Header: React.FC = () => {
                         </a>
                     </>
                 )}
+                <div
+                    className="cursor-pointer mt-5 p-5 border border-white rounded-full hover:bg-teal-600"
+                    onClick={() =>
+                        setTheme(theme === 'light' ? 'dark' : 'light')
+                    }
+                >
+                    {loaded && theme === 'dark' ? (
+                        <FaSun className="h-7 w-7" />
+                    ) : (
+                        <BsFillMoonStarsFill className="h-7 w-7" />
+                    )}
+                </div>
             </nav>
         </header>
     );

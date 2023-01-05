@@ -7,8 +7,12 @@
         scroll-behavior: smooth;
     }
 
+    body {
+        @apply bg-white text-black dark:bg-Black dark:text-white;
+    }
+
     p {
-        @apply text-gray-700;
+        @apply text-gray-700 dark:text-gray-300;
     }
 
     .content {
@@ -48,4 +52,8 @@
             @apply whitespace-pre;
         }
     }
+}
+
+.skillbar {
+    @apply bg-orange-600;
 }
