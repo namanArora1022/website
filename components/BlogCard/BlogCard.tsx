@@ -12,7 +12,7 @@ const BlogCard: React.FC<Props> = props => {
     return (
         <Link href={`/blog/${slug.current}`} passHref>
             <motion.div
-                className="bg-gray-100 p-4 rounded-lg shadow hover:shadow-lg my-10 md:m-10 cursor-pointer"
+                className="bg-gray-100 dark:bg-neutral-900 p-4 rounded-lg shadow hover:shadow-lg my-10 md:m-10 cursor-pointer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
             >
